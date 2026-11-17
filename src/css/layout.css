@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+section {
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+.section-label {
+  font-family: var(--ff-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--c-accent);
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .container { padding: 0 32px; }
+}

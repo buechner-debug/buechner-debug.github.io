@@ -1,0 +1,207 @@
+/* Preloader */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-bg);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.preloader__text {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-2xl);
+  color: var(--c-white);
+}
+
+/* GL Canvas */
+#gl-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(8, 9, 11, 0.8);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+.nav.is-scrolled { border-bottom-color: var(--c-border); }
+
+.nav__logo {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-lg);
+  color: var(--c-white);
+}
+.nav__logo:hover { opacity: 1; color: var(--c-accent); }
+
+.nav__links {
+  display: none;
+  gap: var(--space-md);
+}
+.nav__links a {
+  font-family: var(--ff-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--c-text-muted);
+  transition: color var(--transition);
+}
+.nav__links a:hover { color: var(--c-white); opacity: 1; }
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.lang-switch {
+  font-family: var(--ff-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  background: none;
+  border: 1px solid var(--c-border);
+  color: var(--c-text-muted);
+  padding: 0.25em 0.6em;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.lang-switch:hover {
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+}
+
+.nav__burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav__burger span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--c-text);
+  transition: all var(--transition);
+}
+.nav__burger[aria-expanded="true"] span:first-child {
+  transform: rotate(45deg) translate(2.5px, 2.5px);
+}
+.nav__burger[aria-expanded="true"] span:last-child {
+  transform: rotate(-45deg) translate(2.5px, -2.5px);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(8, 9, 11, 0.95);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition);
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  text-align: center;
+}
+.mobile-menu a {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-xl);
+  color: var(--c-white);
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.05em;
+  padding: 0.75em 1.5em;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: center;
+}
+.btn--primary {
+  background: var(--c-accent);
+  color: var(--c-bg);
+}
+.btn--primary:hover {
+  background: var(--c-white);
+  color: var(--c-bg);
+  opacity: 1;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: var(--space-sm);
+}
+.form-group label {
+  display: block;
+  font-family: var(--ff-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--c-text-muted);
+  margin-bottom: 0.5em;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 0.75em 1em;
+  color: var(--c-text);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-base);
+  transition: border-color var(--transition);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--c-accent);
+}
+.form-group textarea { resize: vertical; }
+
+@media (min-width: 768px) {
+  .nav { padding: var(--space-sm) 32px; }
+  .nav__links { display: flex; }
+  .nav__burger { display: none; }
+}

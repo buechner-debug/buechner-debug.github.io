@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christopher Büchner — KI-Engineer</title>
+  <meta name="description" content="Christopher Büchner · KI-Engineer · AI Automation — Intelligente Workflows und maßgeschneiderte KI-Lösungen." />
+  <meta property="og:title" content="Christopher Büchner — KI-Engineer" />
+  <meta property="og:description" content="KI-Engineer · AI Automation — Intelligente Workflows und maßgeschneiderte KI-Lösungen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://buechner-debug.github.io" />
+  <link rel="canonical" href="https://buechner-debug.github.io" />
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true">
+    <span class="preloader__text">CB</span>
+  </div>
+
+  <!-- GL Canvas -->
+  <canvas id="gl-stage" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header class="nav" role="banner">
+    <a href="/" class="nav__logo" aria-label="Christopher Büchner">CB</a>
+    <nav class="nav__links" role="navigation" aria-label="Hauptnavigation">
+      <a href="#services" data-i18n="nav.services">Leistungen</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#about" data-i18n="nav.about">Über mich</a>
+      <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="lang-switch" data-lang="en" aria-label="Switch to English">EN</button>
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" aria-hidden="true">
+    <nav>
+      <a href="#services" data-i18n="nav.services">Leistungen</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#about" data-i18n="nav.about">Über mich</a>
+      <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <h1 class="hero__name" data-i18n="hero.title">Christopher Büchner</h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">KI-Engineer · AI Automation</p>
+        <p class="hero__tagline" data-i18n="hero.tagline">Ich automatisiere Arbeitsprozesse mit KI.</p>
+        <a href="#contact" class="btn btn--primary" data-i18n="hero.cta">Kontakt aufnehmen</a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-label" data-i18n="services.label">Leistungen</h2>
+        <div class="services__grid">
+          <div class="card" data-reveal>
+            <span class="card__icon">⚙</span>
+            <h3 data-i18n="services.automation.title">AI Automation & Workflows</h3>
+            <p data-i18n="services.automation.desc">Wiederkehrende Aufgaben durch intelligente KI-Workflows ersetzen.</p>
+          </div>
+          <div class="card" data-reveal>
+            <span class="card__icon">🤖</span>
+            <h3 data-i18n="services.agents.title">Custom AI Agents</h3>
+            <p data-i18n="services.agents.desc">Maßgeschneiderte KI-Agenten für spezifische Geschäftsprozesse.</p>
+          </div>
+          <div class="card" data-reveal>
+            <span class="card__icon">🔗</span>
+            <h3 data-i18n="services.integration.title">System-Integration</h3>
+            <p data-i18n="services.integration.desc">KI-Lösungen nahtlos in bestehende Systeme einbinden.</p>
+          </div>
+          <div class="card" data-reveal>
+            <span class="card__icon">💡</span>
+            <h3 data-i18n="services.consulting.title">IT-Beratung</h3>
+            <p data-i18n="services.consulting.desc">Strategische Beratung zur Digitalisierung und KI-Einführung.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-label" data-i18n="skills.label">Tech Stack</h2>
+        <div class="skills__tags" data-reveal>
+          <span class="tag">Python</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">React</span>
+          <span class="tag">Claude API</span>
+          <span class="tag">OpenAI API</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">n8n</span>
+          <span class="tag">Make</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-label" data-i18n="about.label">Über mich</h2>
+        <div class="about__content" data-reveal>
+          <p data-i18n="about.text">Über 10 Jahre in der IT — vom Support bis zur Systemadministration. Heute entwickle ich KI-Lösungen für Unternehmen: intelligente Workflows, maßgeschneiderte AI Agents und Automatisierungen, die Zeit sparen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-label" data-i18n="contact.label">Kontakt</h2>
+        <p class="contact__intro" data-i18n="contact.intro">Projekt im Kopf? Schreib mir.</p>
+        <form id="contact-form" class="contact__form" data-reveal>
+          <div class="form-group">
+            <label for="name" data-i18n="contact.name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="contact.email">E-Mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="contact.message">Nachricht</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" data-i18n="contact.send">Absenden</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__copy">&copy; 2026 Christopher Büchner</span>
+      <nav class="footer__links">
+        <a href="/impressum.html" data-i18n="footer.impressum">Impressum</a>
+        <a href="/datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+        <a href="https://github.com/buechner-debug" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
