@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Christopher Büchner — KI-Engineer</title>
-  <meta name="description" content="Christopher Büchner · KI-Engineer · AI Automation — Intelligente Workflows und maßgeschneiderte KI-Lösungen." />
+  <meta name="description" content="Christopher Büchner · KI-Automation mit n8n und Sprachmodellen. Auf dem Weg zum KI-Engineer." />
   <meta property="og:title" content="Christopher Büchner — KI-Engineer" />
-  <meta property="og:description" content="KI-Engineer · AI Automation — Intelligente Workflows und maßgeschneiderte KI-Lösungen." />
+  <meta property="og:description" content="KI-Automation mit n8n und Sprachmodellen. Auf dem Weg zum KI-Engineer." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://buechner-debug.github.io" />
   <link rel="canonical" href="https://buechner-debug.github.io" />
@@ -24,10 +24,10 @@
   <!-- Navigation -->
   <header class="nav" role="banner">
     <a href="/" class="nav__logo" aria-label="Christopher Büchner">CB</a>
-    <nav class="nav__links" role="navigation" aria-label="Hauptnavigation">
-      <a href="#services" data-i18n="nav.services">Leistungen</a>
-      <a href="#skills" data-i18n="nav.skills">Skills</a>
-      <a href="#about" data-i18n="nav.about">Über mich</a>
+    <nav class="nav__links" aria-label="Hauptnavigation">
+      <a href="#can" data-i18n="nav.can">Können</a>
+      <a href="#goal" data-i18n="nav.goal">Ziel</a>
+      <a href="#stack" data-i18n="nav.stack">Stack</a>
       <a href="#contact" data-i18n="nav.contact">Kontakt</a>
     </nav>
     <div class="nav__actions">
@@ -40,104 +40,90 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" aria-hidden="true">
-    <nav>
-      <a href="#services" data-i18n="nav.services">Leistungen</a>
-      <a href="#skills" data-i18n="nav.skills">Skills</a>
-      <a href="#about" data-i18n="nav.about">Über mich</a>
+    <nav aria-label="Mobile Navigation">
+      <a href="#can" data-i18n="nav.can">Können</a>
+      <a href="#goal" data-i18n="nav.goal">Ziel</a>
+      <a href="#stack" data-i18n="nav.stack">Stack</a>
       <a href="#contact" data-i18n="nav.contact">Kontakt</a>
     </nav>
   </div>
 
   <main>
-    <!-- Hero -->
     <section id="hero" class="hero">
       <div class="container">
-        <h1 class="hero__name" data-i18n="hero.title">Christopher Büchner</h1>
-        <p class="hero__subtitle" data-i18n="hero.subtitle">KI-Engineer · AI Automation</p>
-        <p class="hero__tagline" data-i18n="hero.tagline">Ich automatisiere Arbeitsprozesse mit KI.</p>
+        <h1 class="hero__name">Christopher Büchner</h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">KI-Automation · auf dem Weg zum KI-Engineer</p>
+        <p class="hero__tagline" data-i18n="hero.tagline">Ich baue Automationen, die Routinearbeit übernehmen.</p>
         <a href="#contact" class="btn btn--primary" data-i18n="hero.cta">Kontakt aufnehmen</a>
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="services">
+    <section id="can" class="services">
       <div class="container">
-        <h2 class="section-label" data-i18n="services.label">Leistungen</h2>
+        <h2 class="section-label" data-i18n="can.label">Was ich kann</h2>
         <div class="services__grid">
-          <div class="card" data-reveal>
-            <span class="card__icon">⚙</span>
-            <h3 data-i18n="services.automation.title">AI Automation & Workflows</h3>
-            <p data-i18n="services.automation.desc">Wiederkehrende Aufgaben durch intelligente KI-Workflows ersetzen.</p>
-          </div>
-          <div class="card" data-reveal>
-            <span class="card__icon">🤖</span>
-            <h3 data-i18n="services.agents.title">Custom AI Agents</h3>
-            <p data-i18n="services.agents.desc">Maßgeschneiderte KI-Agenten für spezifische Geschäftsprozesse.</p>
-          </div>
-          <div class="card" data-reveal>
-            <span class="card__icon">🔗</span>
-            <h3 data-i18n="services.integration.title">System-Integration</h3>
-            <p data-i18n="services.integration.desc">KI-Lösungen nahtlos in bestehende Systeme einbinden.</p>
-          </div>
-          <div class="card" data-reveal>
-            <span class="card__icon">💡</span>
-            <h3 data-i18n="services.consulting.title">IT-Beratung</h3>
-            <p data-i18n="services.consulting.desc">Strategische Beratung zur Digitalisierung und KI-Einführung.</p>
-          </div>
+          <article class="card">
+            <h3 data-i18n="can.automation.title">KI-Automation mit n8n</h3>
+            <p data-i18n="can.automation.desc">Abläufe analysieren und als Workflow umsetzen: E-Mails, Formulare, Daten zwischen Tools. Mit Sprachmodellen dort, wo sie wirklich helfen.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="can.web.title">Web-Entwicklung</h3>
+            <p data-i18n="can.web.desc">Websites und kleine Anwendungen mit React, Next.js und Node.js.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="can.it.title">IT-Praxis</h3>
+            <p data-i18n="can.it.desc">Über zehn Jahre Support und Administration unter Windows und Linux. Ich kenne die Stellen, an denen es im Alltag hakt.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="skills">
+    <section id="goal" class="about">
       <div class="container">
-        <h2 class="section-label" data-i18n="skills.label">Tech Stack</h2>
-        <div class="skills__tags" data-reveal>
-          <span class="tag">Python</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">React</span>
-          <span class="tag">Claude API</span>
-          <span class="tag">OpenAI API</span>
-          <span class="tag">LangChain</span>
-          <span class="tag">n8n</span>
-          <span class="tag">Make</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Linux</span>
-          <span class="tag">Git</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-label" data-i18n="about.label">Über mich</h2>
+        <h2 class="section-label" data-i18n="goal.label">Wohin ich will</h2>
         <div class="about__content" data-reveal>
-          <p data-i18n="about.text">Über 10 Jahre in der IT — vom Support bis zur Systemadministration. Heute entwickle ich KI-Lösungen für Unternehmen: intelligente Workflows, maßgeschneiderte AI Agents und Automatisierungen, die Zeit sparen.</p>
+          <p data-i18n="goal.text">Ich werde KI-Engineer. Als Nächstes baue ich Agenten, die Sprachmodelle mit echten Systemen verbinden und im Betrieb zuverlässig laufen.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <section id="stack" class="skills">
+      <div class="container">
+        <h2 class="section-label" data-i18n="stack.label">Stack</h2>
+        <ul class="skills__tags" data-reveal>
+          <li class="tag">n8n</li>
+          <li class="tag">Python</li>
+          <li class="tag">JavaScript</li>
+          <li class="tag">Node.js</li>
+          <li class="tag">React</li>
+          <li class="tag">Next.js</li>
+          <li class="tag">SQL</li>
+          <li class="tag">Git</li>
+          <li class="tag">Linux</li>
+          <li class="tag">Cursor AI</li>
+        </ul>
+      </div>
+    </section>
+
     <section id="contact" class="contact">
       <div class="container">
         <h2 class="section-label" data-i18n="contact.label">Kontakt</h2>
-        <p class="contact__intro" data-i18n="contact.intro">Projekt im Kopf? Schreib mir.</p>
-        <form id="contact-form" class="contact__form" data-reveal>
+        <p class="contact__intro" data-i18n="contact.intro">Ein Ablauf, der sich automatisieren ließe? Schreib mir.</p>
+        <p class="contact__direct"><a href="mailto:christopher.buechner@protonmail.com">christopher.buechner@protonmail.com</a></p>
+        <form id="contact-form" class="contact__form">
           <div class="form-group">
             <label for="name" data-i18n="contact.name">Name</label>
-            <input type="text" id="name" name="name" required />
+            <input type="text" id="name" name="name" autocomplete="name" required />
           </div>
           <div class="form-group">
             <label for="email" data-i18n="contact.email">E-Mail</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" autocomplete="email" required />
           </div>
           <div class="form-group">
             <label for="message" data-i18n="contact.message">Nachricht</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
-          <button type="submit" class="btn btn--primary" data-i18n="contact.send">Absenden</button>
+          <button type="submit" class="btn btn--primary" data-i18n="contact.send">E-Mail öffnen</button>
         </form>
       </div>
     </section>

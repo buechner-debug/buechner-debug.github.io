@@ -1,52 +1,48 @@
 export default {
   nav: {
-    services: 'Services',
-    skills: 'Skills',
-    about: 'About',
+    can: 'Skills',
+    goal: 'Goal',
+    stack: 'Stack',
     contact: 'Contact',
   },
   hero: {
-    title: 'Christopher Büchner',
-    subtitle: 'AI Engineer · AI Automation',
-    tagline: 'I automate workflows with AI.',
+    subtitle: 'AI automation · becoming an AI engineer',
+    tagline: 'I build automations that take over routine work.',
     cta: 'Get in touch',
   },
-  services: {
-    label: 'Services',
+  can: {
+    label: 'What I can do',
     automation: {
-      title: 'AI Automation & Workflows',
-      desc: 'Replace repetitive tasks with intelligent AI workflows.',
+      title: 'AI automation with n8n',
+      desc: 'Analysing processes and turning them into workflows: emails, forms, data between tools. With language models where they actually help.',
     },
-    agents: {
-      title: 'Custom AI Agents',
-      desc: 'Tailored AI agents for specific business processes.',
+    web: {
+      title: 'Web development',
+      desc: 'Websites and small applications with React, Next.js and Node.js.',
     },
-    integration: {
-      title: 'System Integration',
-      desc: 'Seamlessly connect AI solutions with existing systems.',
-    },
-    consulting: {
-      title: 'IT Consulting',
-      desc: 'Strategic consulting on digitalization and AI adoption.',
+    it: {
+      title: 'IT in practice',
+      desc: 'More than ten years of support and administration on Windows and Linux. I know where day-to-day work gets stuck.',
     },
   },
-  skills: {
-    label: 'Tech Stack',
+  goal: {
+    label: 'Where I’m heading',
+    text: 'I’m becoming an AI engineer. Next, I’m building agents that connect language models to real systems and run reliably in production.',
   },
-  about: {
-    label: 'About',
-    text: 'Over 10 years in IT — from support to system administration. Today I build AI solutions for businesses: intelligent workflows, custom AI agents, and automations that save time.',
+  stack: {
+    label: 'Stack',
   },
   contact: {
     label: 'Contact',
-    intro: 'Got a project in mind? Let\'s talk.',
+    intro: 'Got a process that could be automated? Write to me.',
     name: 'Name',
     email: 'Email',
     message: 'Message',
-    send: 'Send',
+    send: 'Open email',
+    subject: 'Enquiry from',
   },
   footer: {
-    impressum: 'Legal Notice',
-    privacy: 'Privacy Policy',
+    impressum: 'Legal notice',
+    privacy: 'Privacy',
   },
 };

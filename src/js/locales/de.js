@@ -1,49 +1,45 @@
 export default {
   nav: {
-    services: 'Leistungen',
-    skills: 'Skills',
-    about: 'Über mich',
+    can: 'Können',
+    goal: 'Ziel',
+    stack: 'Stack',
     contact: 'Kontakt',
   },
   hero: {
-    title: 'Christopher Büchner',
-    subtitle: 'KI-Engineer · AI Automation',
-    tagline: 'Ich automatisiere Arbeitsprozesse mit KI.',
+    subtitle: 'KI-Automation · auf dem Weg zum KI-Engineer',
+    tagline: 'Ich baue Automationen, die Routinearbeit übernehmen.',
     cta: 'Kontakt aufnehmen',
   },
-  services: {
-    label: 'Leistungen',
+  can: {
+    label: 'Was ich kann',
     automation: {
-      title: 'AI Automation & Workflows',
-      desc: 'Wiederkehrende Aufgaben durch intelligente KI-Workflows ersetzen.',
+      title: 'KI-Automation mit n8n',
+      desc: 'Abläufe analysieren und als Workflow umsetzen: E-Mails, Formulare, Daten zwischen Tools. Mit Sprachmodellen dort, wo sie wirklich helfen.',
     },
-    agents: {
-      title: 'Custom AI Agents',
-      desc: 'Maßgeschneiderte KI-Agenten für spezifische Geschäftsprozesse.',
+    web: {
+      title: 'Web-Entwicklung',
+      desc: 'Websites und kleine Anwendungen mit React, Next.js und Node.js.',
     },
-    integration: {
-      title: 'System-Integration',
-      desc: 'KI-Lösungen nahtlos in bestehende Systeme einbinden.',
-    },
-    consulting: {
-      title: 'IT-Beratung',
-      desc: 'Strategische Beratung zur Digitalisierung und KI-Einführung.',
+    it: {
+      title: 'IT-Praxis',
+      desc: 'Über zehn Jahre Support und Administration unter Windows und Linux. Ich kenne die Stellen, an denen es im Alltag hakt.',
     },
   },
-  skills: {
-    label: 'Tech Stack',
+  goal: {
+    label: 'Wohin ich will',
+    text: 'Ich werde KI-Engineer. Als Nächstes baue ich Agenten, die Sprachmodelle mit echten Systemen verbinden und im Betrieb zuverlässig laufen.',
   },
-  about: {
-    label: 'Über mich',
-    text: 'Über 10 Jahre in der IT — vom Support bis zur Systemadministration. Heute entwickle ich KI-Lösungen für Unternehmen: intelligente Workflows, maßgeschneiderte AI Agents und Automatisierungen, die Zeit sparen.',
+  stack: {
+    label: 'Stack',
   },
   contact: {
     label: 'Kontakt',
-    intro: 'Projekt im Kopf? Schreib mir.',
+    intro: 'Ein Ablauf, der sich automatisieren ließe? Schreib mir.',
     name: 'Name',
     email: 'E-Mail',
     message: 'Nachricht',
-    send: 'Absenden',
+    send: 'E-Mail öffnen',
+    subject: 'Anfrage von',
   },
   footer: {
     impressum: 'Impressum',

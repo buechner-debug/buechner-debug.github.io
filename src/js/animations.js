@@ -39,21 +39,7 @@ export function init() {
     });
   }
 
-  const tags = document.querySelectorAll('.tag');
-  if (tags.length) {
-    gsap.from(tags, {
-      scale: 0.8,
-      opacity: 0,
-      duration: 0.4,
-      stagger: 0.03,
-      ease: 'back.out(1.5)',
-      scrollTrigger: {
-        trigger: tags[0],
-        start: 'top 85%',
-        once: true,
-      },
-    });
-  }
+  document.fonts?.ready.then(() => ScrollTrigger.refresh());
 
   const nav = document.querySelector('.nav');
   if (nav) {

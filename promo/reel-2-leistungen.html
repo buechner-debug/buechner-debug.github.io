@@ -1,0 +1,309 @@
+<title>AI Automation Services</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter+Tight:wght@300;400;600;700&family=DM+Mono&display=swap">
+<style>
+  :root {
+    --bg: #08090b;
+    --fg: #e2e4e9;
+    --accent: #c8ff4d;
+    --plasma: #6e7bff;
+    --muted: #8b8f9a;
+    --surface: #111318;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #08090b; --fg: #e2e4e9; --accent: #c8ff4d;
+      --plasma: #6e7bff; --muted: #8b8f9a; --surface: #111318;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #08090b; --fg: #e2e4e9; --accent: #c8ff4d;
+    --plasma: #6e7bff; --muted: #8b8f9a; --surface: #111318;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Inter Tight', system-ui, -apple-system, sans-serif;
+  }
+
+
+  .reel {
+    width: 1080px;
+    height: 1920px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+    transform-origin: top left;
+  }
+
+  canvas#particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    z-index: 2;
+  }
+
+  .scene-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 32px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .scene-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 88px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    letter-spacing: -0.03em;
+  }
+
+  .scene-desc {
+    font-size: 46px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: 30px;
+    max-width: 800px;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .scene-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  .service-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 64px;
+    margin-top: 48px;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .service-num {
+    font-size: 120px;
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.3;
+    line-height: 1;
+  }
+
+  .service-name {
+    font-size: 66px;
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+  .service-desc {
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-top: 16px;
+    line-height: 1.4;
+  }
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 100px;
+    left: 80px;
+    right: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  .bottom-name {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--fg);
+  }
+
+  .bottom-url {
+    font-size: 30px;
+    color: var(--accent);
+  }
+</style>
+
+<div class="reel" id="reel">
+  <canvas id="particles"></canvas>
+
+  <!-- Scene 1: Hook -->
+  <div class="scene" id="s1">
+    <div class="scene-title" id="s1-title" style="font-size:150px">Routinearbeit<br>kostet Zeit.</div>
+    <div class="scene-desc" id="s1-desc" style="margin-top:48px;font-size:52px">Vieles davon lässt sich<br>automatisieren.</div>
+  </div>
+
+  <!-- Scene 2: Service 1 -->
+  <div class="scene" id="s2" style="display:none">
+    <div class="scene-label" id="s2-label">Was ich mache</div>
+    <div class="service-card" id="s2-card">
+      <div class="service-num">01</div>
+      <div class="service-name">Workflows mit n8n</div>
+      <div class="service-desc">E-Mails, Formulare, Daten zwischen Tools: automatisch erledigt.</div>
+    </div>
+  </div>
+
+  <!-- Scene 3: Service 2 -->
+  <div class="scene" id="s3" style="display:none">
+    <div class="scene-label" id="s3-label">Was ich mache</div>
+    <div class="service-card" id="s3-card">
+      <div class="service-num">02</div>
+      <div class="service-name">Sprachmodelle einbinden</div>
+      <div class="service-desc">Texte sortieren, zusammenfassen, beantworten. Dort, wo es hilft.</div>
+    </div>
+  </div>
+
+  <!-- Scene 4: Service 3 -->
+  <div class="scene" id="s4" style="display:none">
+    <div class="scene-label" id="s4-label">Was ich mache</div>
+    <div class="service-card" id="s4-card">
+      <div class="service-num">03</div>
+      <div class="service-name">IT-Praxis</div>
+      <div class="service-desc">Zehn Jahre Support und Administration. Ich baue, was im Alltag läuft.</div>
+    </div>
+  </div>
+
+  <!-- Scene 5: CTA -->
+  <div class="scene" id="s5" style="display:none;align-items:center;text-align:center">
+    <div class="scene-title" id="s5-title" style="font-size:112px">Ein Ablauf, der nervt?</div>
+    <div class="scene-desc" id="s5-desc" style="text-align:center;font-size:46px;margin-top:36px">Schreib mir.<br>Ich schaue, was sich automatisieren lässt.</div>
+    <div class="scene-label" id="s5-url" style="margin-top:60px;font-size:38px;letter-spacing:0.05em;text-transform:none">buechner-debug.github.io</div>
+  </div>
+
+  <div class="bottom-bar" id="bottom">
+    <span class="bottom-name">Christopher Büchner</span>
+    <span class="bottom-url">KI-Automation</span>
+  </div>
+</div>
+
+<script>
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  canvas.width = 1080;
+  canvas.height = 1920;
+
+  const pts = [];
+  for (let i = 0; i < 50; i++) {
+    pts.push({
+      x: Math.random() * 1080, y: Math.random() * 1920,
+      r: Math.random() * 2.5 + 0.5,
+      vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+      a: Math.random() * 0.25 + 0.05,
+    });
+  }
+  function draw() {
+    ctx.clearRect(0, 0, 1080, 1920);
+    for (const p of pts) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = 1080; if (p.x > 1080) p.x = 0;
+      if (p.y < 0) p.y = 1920; if (p.y > 1920) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(110, 123, 255, ${p.a})`;
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  function anim(el, props, dur, delay = 0) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        el.style.transition = `all ${dur}ms cubic-bezier(0.16, 1, 0.3, 1)`;
+        Object.assign(el.style, props);
+        setTimeout(resolve, dur);
+      }, delay);
+    });
+  }
+
+  function show(id) {
+    document.querySelectorAll('.scene').forEach(s => s.style.display = 'none');
+    document.getElementById(id).style.display = 'flex';
+  }
+
+  async function run() {
+    // Scene 1: Hook
+    const s1t = document.getElementById('s1-title');
+    const s1d = document.getElementById('s1-desc');
+    await anim(s1t, { opacity: '1', transform: 'translateY(0)' }, 800, 400);
+    await anim(s1d, { opacity: '1', transform: 'translateY(0)' }, 700, 300);
+    await new Promise(r => setTimeout(r, 1500));
+
+    // Show bottom bar
+    anim(document.getElementById('bottom'), { opacity: '1' }, 500);
+
+    // Scene 2
+    show('s2');
+    const s2l = document.getElementById('s2-label');
+    const s2c = document.getElementById('s2-card');
+    await anim(s2l, { opacity: '1', transform: 'translateX(0)' }, 500, 200);
+    await anim(s2c, { opacity: '1', transform: 'translateY(0)' }, 700, 100);
+    await new Promise(r => setTimeout(r, 1200));
+
+    // Scene 3
+    show('s3');
+    const s3l = document.getElementById('s3-label');
+    const s3c = document.getElementById('s3-card');
+    await anim(s3l, { opacity: '1', transform: 'translateX(0)' }, 500, 200);
+    await anim(s3c, { opacity: '1', transform: 'translateY(0)' }, 700, 100);
+    await new Promise(r => setTimeout(r, 1200));
+
+    // Scene 4
+    show('s4');
+    const s4l = document.getElementById('s4-label');
+    const s4c = document.getElementById('s4-card');
+    await anim(s4l, { opacity: '1', transform: 'translateX(0)' }, 500, 200);
+    await anim(s4c, { opacity: '1', transform: 'translateY(0)' }, 700, 100);
+    await new Promise(r => setTimeout(r, 1200));
+
+    // Scene 5: CTA
+    show('s5');
+    const s5t = document.getElementById('s5-title');
+    const s5d = document.getElementById('s5-desc');
+    const s5u = document.getElementById('s5-url');
+    await anim(s5t, { opacity: '1', transform: 'translateY(0)' }, 800, 300);
+    await anim(s5d, { opacity: '1', transform: 'translateY(0)' }, 700, 200);
+    await anim(s5u, { opacity: '1', transform: 'translateX(0)' }, 600, 300);
+    await new Promise(r => setTimeout(r, 2000));
+  }
+  run();
+
+  function fitReel() {
+    const reel = document.getElementById('reel');
+    const scale = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+    reel.style.transform = `scale(${scale})`;
+  }
+  fitReel();
+  window.addEventListener('resize', fitReel);
+</script>

@@ -4,7 +4,9 @@ import '../css/layout.css';
 import '../css/components.css';
 import '../css/sections.css';
 
-import { init as initI18n } from './i18n.js';
+import { init as initI18n, getLang } from './i18n.js';
+import de from './locales/de.js';
+import en from './locales/en.js';
 import { init as initAnimations } from './animations.js';
 
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -60,7 +62,8 @@ function initContactForm() {
     const name = form.querySelector('#name').value;
     const email = form.querySelector('#email').value;
     const message = form.querySelector('#message').value;
-    const subject = encodeURIComponent(`Kontaktanfrage von ${name}`);
+    const prefix = (getLang() === 'en' ? en : de).contact.subject;
+    const subject = encodeURIComponent(`${prefix} ${name}`);
     const body = encodeURIComponent(`Name: ${name}\nE-Mail: ${email}\n\n${message}`);
     window.location.href = `mailto:christopher.buechner@protonmail.com?subject=${subject}&body=${body}`;
   });
